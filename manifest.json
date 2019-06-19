@@ -1,0 +1,26 @@
+{
+ "manifest_version": 2,
+ "name": "Signature Viewer",
+ "description": "Shows information about embedded XAdES signatures",
+ "version": "1.0.4",
+ "author": "Chris Groenveld",
+ "background": {
+  "scripts": [ "xades.js", "bg.js" ]
+ },
+ "icons": {
+   "128": "doc128tick.png"
+ },
+ "content_scripts": [
+  {
+   "matches": [ "<all_urls>" ],
+   "js": [ "check_signature.js" ],
+   "run_at": "document_end"
+  }
+ ],
+ "browser_action": {
+  "default_icon": {
+   "128": "doc128gray.png"
+  },
+  "default_title": "Signature Viewer"
+ }
+}
